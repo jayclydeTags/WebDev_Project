@@ -1,0 +1,44 @@
+@extends('layouts.dashboard')
+
+@section('title', 'Activity 1 - CRUD')
+
+@section('content')
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2>  </h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('products.index') }}" title="Go back"> <i class="fas fa-backward "></i> </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Name:</strong>
+                <input type="text" name="name" class="form-control" placeholder="Name" value="{{ $product->name }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Description</strong>
+                <textarea class="form-control" style="height:50px" name="description"
+                        placeholder="description">{{ $product->description }}</textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Price</strong>
+                <input type="number" name="price" class="form-control" placeholder="Put the price" value="{{ $product->price }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Date Created</strong>
+                <p>{{ $product->created_at }}</p>
+            </div>
+        </div>
+    </div>
+@endsection
