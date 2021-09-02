@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,13 @@ Auth::routes();
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@dashboard');
 
-Route::resource('/products', ProductController::class);
+Route::resource('products', ProductController::class);
 
+Route::resource('file', FileController::class);
+
+Route::get('/user/personal-information', function () {
+    return view('custom.apps.profile.profile-1.personal-information');
+});
+Route::get('/user/overview', function () {
+    return view('custom.apps.profile.profile-1.overview');
+});
